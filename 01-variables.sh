@@ -3,7 +3,11 @@
 
 echo "Hello , Hi this is yaswanth"
 
-echo "ramesh : hi suresh , how are you "
-echo "suresh : hi ramesh , i am fine and you"
-echo "ramesh : i am fine suresh , where are uou going"
-echo "suresh : i am going to bangalore ramesh"
+
+person1=ramesh 
+person2=suresh
+
+echo "$person1 : hi $person2 , how are you "
+echo "$person2 : hi $person1 , i am fine and you"
+echo "ramesh : i am fine $person2 , where are uou going"
+echo "$person2 : i am going to bangalore $person1"
