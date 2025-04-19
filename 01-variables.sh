@@ -4,10 +4,10 @@
 echo "Hello , Hi this is yaswanth"
 
 
-person1=ramesh 
-person2=suresh
+PERSON1=ramesh 
+PERSON2=suresh
 
-echo "$person1 : hi $person2 , how are you "
-echo "$person2 : hi $person1 , i am fine and you"
-echo "ramesh : i am fine $person2 , where are uou going"
-echo "$person2 : i am going to bangalore $person1"
+echo "$PERSON1 : hi $PERSON2 , how are you "
+echo "$PERSON2 : hi $PERSON1 , i am fine and you"
+echo "ramesh : i am fine $PERSON2 , where are uou going"
+echo "$PERSON2 : i am going to bangalore $PERSON1"
