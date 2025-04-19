@@ -3,6 +3,8 @@
 
 echo "Hello , Hi this is yaswanth"
 
+echo "$date"
+
 
 PERSON1=ramesh 
 PERSON2=suresh
