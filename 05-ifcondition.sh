@@ -8,4 +8,4 @@ if [$USERID==0]
         echo " date is : $DATE"
     else 
        echo "please change the user to root"
-fine    
+fi    
