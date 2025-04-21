@@ -2,5 +2,7 @@
 
 persons=("ramesh" "suresh" "mahesh")
 
-echo "first person is : ${persons[0]}
+echo "first person is : ${persons[0]}"
+
+
 
