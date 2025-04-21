@@ -18,7 +18,7 @@ if [ $USER -ne 0 ]
 fi
 
 validate(){
-    if [ $1 -ne o ]
+    if [ $1 -ne 0 ]
     then
        echo  -e "$R $2 ...  failure $N"
        exit 1
