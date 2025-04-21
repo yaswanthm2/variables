@@ -29,7 +29,7 @@ validate(){
 
 for i in $@   # $@ it refers all the arguments you are giving while executing script 
    do 
-     yum install $i -y >>LOGFILE 
+     yum install $i -y &>>$LOGFILE 
      validate $?  "Installing $i"     # $? it is exit status code means if command is succes it give 0 value if not it will give 1-127
    done
 
