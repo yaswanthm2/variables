@@ -1,8 +1,8 @@
 #!/bin/bash
 
-R=\e[31m    #it will give text red color 
-G=\e[32m    #it will give text green color 
-N=\e[0m     #it will give text normal color 
+R="\e[31m"   #it will give text red color 
+G="\e[32m"    #it will give text green color 
+N="\e[0m"     #it will give text normal color 
 
 SCRIPTNAME=$0     # $0 give script file name to that variable  
 DATE=$(date +%F-%H:%M:%S)   
@@ -11,19 +11,19 @@ USER=$(id -u)
 
 if [ $USER -ne 0 ]
   then
-    echo -e "please change user to $R sudo user"
+    echo -e "please change user to $R sudo user $N"
     exit 1
   else
-    echo -e "$G user is root user"
+    echo -e "$G user is root user $N"
 fi
 
 validate(){
     if [ $1 -ne o ]
     then
-       echo  -e "$R $2 ...  failure"
+       echo  -e "$R $2 ...  failure $N"
        exit 1
     else
-       echo -e "$G $2 ... sucess"
+       echo -e "$G $2 ... sucess $N"
     fi            
 }
 
