@@ -15,6 +15,7 @@ if [ $USER -ne 0 ]
     exit 1
   else
     echo -e "$G user is root user"
+fi
 
 validate(){
     if [ $1 -ne o ]
