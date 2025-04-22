@@ -6,6 +6,6 @@ LOGFILE=/tmp/$SCRIPTFILE-$DATE-Deletedlogs
 LOGFILEDR=/tmp/logs
 
 
-FILES_TO_DELETE=$(find $LODFILEDR -type f -iname "*.log"  -mtime +14)
+FILES_TO_DELETE=$(find $LOGFILEDR -type f -iname "*.log"  -mtime +14)
 
 echo "$FILE_TO_DELETE"
