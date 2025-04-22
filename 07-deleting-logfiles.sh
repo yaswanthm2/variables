@@ -8,4 +8,4 @@ LOGFILEDR=/tmp/logs
 
 FILES_TO_DELETE=$(find $LOGFILEDR -type f -iname "*.log"  -mtime  14)
 
-echo "$FILE_TO_DELETE"
+echo "$FILES_TO_DELETE"
