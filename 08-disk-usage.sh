@@ -4,7 +4,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
  
 R="\e[31m"
 G="\e[32m"
-N="\e[om"
+N="\e[0m"
 
 USERID=$(id -u)
 
