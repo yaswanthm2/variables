@@ -14,7 +14,7 @@ if [ $USERID -ne 0 ]
        exit 1
 fi     
 
-validate() {
+validate(){
     if [ $1 -ne 0 ]
       then 
          echo  -e "installation of $2 .... $R failure $N"
