@@ -8,14 +8,14 @@ N=\e[om
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
      then 
        echo -e " you need run this script with $R root user $N "
        exit 1
 fi     
-   
+
 validate() {
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
       then 
          echo  -e "installation of $2 .... $R failure $N"
          exit 1
@@ -28,9 +28,9 @@ for i in $@
     do 
        yum list installed | grep $i 
 
-        if [$? -ne 0] 
+        if [ $? -ne 0 ] 
              then 
-                yum install $i -y &>> $LOGFILE
+                yum install $i -y &>>$LOGFILE
                 validate $?  $i               
              else
                 echo -e  "$i is already $G installed $N"
