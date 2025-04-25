@@ -1,38 +1,38 @@
-#!/bin/bash
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+ 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
-R="\e[31m"   #it will give text red color 
-G="\e[32m"    #it will give text green color 
-N="\e[0m"     #it will give text normal color 
+USERID=$(id -u)
 
-SCRIPTNAME=$0     # $0 give script file name to that variable  
-DATE=$(date +%F-%H:%M:%S)   
-LOGFILE=/tmp/$SCRIPTNAME-$DATE.log    # this is the path where log files are stored
-USER=$(id -u)
-
-if [ $USER -ne 0 ]
-  then
-    echo -e "please change user to $R sudo user $N"
-    exit 1
-  else
-    echo -e "$G user is root user $N"
-fi
+if [ $USERID -ne 0 ]
+     then 
+       echo -e " you need run this script with $R root user $N "
+       exit 1
+fi     
 
 validate(){
     if [ $1 -ne 0 ]
-    then
-       echo  -e "$R $2 ...  failure $N"
-       exit 1
-    else
-       echo -e "$G $2 ... sucess $N"
-    fi            
+      then 
+         echo  -e "installation of $2 .... $R failure $N"
+         exit 1
+      else
+         echo -e "installation of $2 .... $G success $N"
+    fi     
 }
 
-for i in $@   # $@ it refers all the arguments you are giving while executing script 
-   do 
-     yum install $i -y &>>$LOGFILE 
-     validate $?  "Installing $i"     # $? it is exit status code means if command is succes it give 0 value if not it will give 1-127
-   done
+for i in $@ 
+    do 
+       yum list installed | grep $i 
 
-
-
-
+        if [ $? -ne 0 ] 
+             then 
+                yum install $i -y &>>$LOGFILE
+                validate $?  $i               
+             else
+                echo -e  "$i is already $G installed $N"
+        fi 
+    done 
