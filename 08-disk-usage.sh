@@ -18,4 +18,4 @@ PARTION=$(df -hT | grep -vE -i 'tmpfs|filesystem' | awk '{print $1}')
             then
                echo " HIGH DISK USAGE ON $PARTION : $line" &>>$LOG_FILE
 
-     done <<<$DISK_USAGE
+     done <<< $DISK_USAGE
