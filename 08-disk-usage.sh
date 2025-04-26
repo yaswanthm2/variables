@@ -17,7 +17,7 @@ echo "$DISK_USAGE" | while read line; do
 
            if [ $line -gt $THRESOLD ]
             then
-               message+=echo " HIGH DISK USAGE ON $PARTION : $line" &>>$LOG_FILE
+               message+=echo " HIGH DISK USAGE ON $PARTION : $line \n " &>>$LOG_FILE
            fi
   
 done
