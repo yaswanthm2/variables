@@ -13,13 +13,10 @@ DISK_USAGE=$(df -hT | grep -vE -i 'tmpfs|filesystem' |awk '{print $6}' | cut -d 
 PARTION=$(df -hT | grep -vE -i 'tmpfs|filesystem' | awk '{print $1}')
 
 
-echo "$DISK_USAGE" | while read line; do
+while IFS= read line ;
+      do 
+         echo "$line"
 
-           if [ $line -gt $THRESOLD ]
-            then
-               message+=echo " HIGH DISK USAGE ON $PARTION : $line \n " &>>$LOG_FILE
-           fi
-  
-done 
+      done <$DISK_USAGE
 
-echo "$message"
+
