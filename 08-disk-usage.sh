@@ -20,6 +20,6 @@ echo "$DISK_USAGE" | while read line; do
                message+=echo " HIGH DISK USAGE ON $PARTION : $line \n " &>>$LOG_FILE
            fi
   
-done
+done 
 
 echo "$message"
