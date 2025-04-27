@@ -8,14 +8,14 @@ N="\e[0m"
 
 THRESOLD=1
 
-DISK_USAGE=$(df -hT | grep -vE -i 'tmpfs|filesystem' )  #|awk '{print $6}' | cut -d % -f 1)
+DISK_USAGE=$(df -hT | grep -vE -i 'tmpfs|filesystem' |awk '{print $6}' | cut -d % -f 1)
 
 PARTION=$(df -hT | grep -vE -i 'tmpfs|filesystem' | awk '{print $1}')
 
 
 while IFS= read line ;
       do 
-         echo " $line "
+         echo " $line " 
 
       done <<<$DISK_USAGE
 
