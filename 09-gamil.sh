@@ -29,19 +29,19 @@ validate(){
     fi
 }
 
-yum update -y --exclude=kernel* 
+yum update -y --exclude=kernel* >> $LOG_FILE
 
 validate  $? "Updating yum package" 
 
-yum -y install postfix cyrus-sasl-plain mailx 
+yum -y install postfix cyrus-sasl-plain mailx >> $LOG_FILE
 
 validate  $? Installing postfix sasl-auth mailx 
 
-systemctl restart postfix 
+systemctl restart postfix  >> $LOG_FILE
 
-validate $? "restarting postfix"
+validate $? "restarting postfix" 
 
-systemctl enable postfix 
+systemctl enable postfix  >> $LOG_FILE
 
 validate $? "enabling postfix"
 
@@ -51,7 +51,7 @@ smtp_use_tls = yes\
 smtp_sasl_auth_enable = yes\
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd\
 smtp_sasl_security_options = noanonymous\
-smtp_sasl_tls_security_options = noanonymous' /etc/postfix/main.cf
+smtp_sasl_tls_security_options = noanonymous' /etc/postfix/main.cf >> $LOG_FILE
 
 validate $1  " adding lines into config file "
 
