@@ -16,8 +16,14 @@ PARTION=$(df -hT | grep -vE -i 'tmpfs|filesystem' | awk '{print $1}')
 while IFS= read line ;
       do 
          echo " $line " 
+          if [ $line -gt 1 ]
+                 then 
+                    message+=" High disk usage on $PARTION : $line "
+
+          fi           
 
       done <<<$DISK_USAGE
 
 
 
+echo " $message "
