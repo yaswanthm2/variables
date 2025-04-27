@@ -10,22 +10,22 @@ N="\e[0m"
 
 USERID=$(id -u)
 
-if [ $? -ne 0 ]
+if [ $USERID -ne 0 ]
     then 
        echo -e " Please run script with $R root user $N "
        exit -1
     else 
-       echo -e "script is Running $R with sudo access $N "
+       echo -e "script is Running $G with sudo access $N "
 fi
 
 validate(){
 
     if [ $1 -ne 0 ]
       then 
-        echo " $2 .... FAILURE "
+        echo -e " $2 ....$R FAILURE $N "
         exit 1
        else
-         echo " $2 .... SUCCESS "
+         echo -e " $2 .... $G SUCCESS $N"
     fi
 }
 
