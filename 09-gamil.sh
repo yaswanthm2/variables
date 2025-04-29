@@ -56,6 +56,16 @@ smtp_sasl_tls_security_options = noanonymous' /etc/postfix/main.cf &>> $LOG_FILE
 
 validate $?  " adding lines into config file "
 
+read -s -p "Enter username: " username
+
+read -s -p "Enter password: " password 
+
+cp  /home/ec2-user/scripts-learning/variables/sasl_passwd  /etc/postfix/sasl_passwd
+
+validate $? " giving username password to sasl "
+
+postmap /etc/postfix/sasl_passwd 
+
 
 
 
