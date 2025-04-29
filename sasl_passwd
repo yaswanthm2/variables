@@ -1,1 +1,1 @@
-[smtp.gmail.com]:587 $username:$password
+[smtp.gmail.com]:587 username:password
