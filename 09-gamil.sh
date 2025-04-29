@@ -54,7 +54,7 @@ smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd\
 smtp_sasl_security_options = noanonymous\
 smtp_sasl_tls_security_options = noanonymous' /etc/postfix/main.cf &>> $LOG_FILE
 
-validate $1  " adding lines into config file "
+validate $?  " adding lines into config file "
 
 
 
