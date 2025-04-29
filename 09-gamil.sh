@@ -62,7 +62,9 @@ read -s -p "Enter password: " password
 
 cp  /home/ec2-user/scripts-learning/variables/sasl_passwd  /etc/postfix/sasl_passwd
 
-sed -i 's/username/$username/' 's/password/$password/' /etc/postfix/sasl_passwd
+sed -i 's/username/$username/' /etc/postfix/sasl_passwd &>> $LOG_FILE
+
+sed -i 's/password/$password/' /etc/postfix/sasl_passwd &>> $LOG_FILE
 
 validate $? " giving username password to sasl "
 
